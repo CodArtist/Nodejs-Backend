@@ -12,6 +12,9 @@ cloudinary.config({
     api_secret:"S08ozAr0id3dld5orTaM85iYPD0"
 })
 app.use(bodyParser.json())
+
+
+const port=process.env.PORT || 3000
 const Users= mongoose.model("users")
 
 const mongouri ="mongodb+srv://harshjain:Harsh2001@cluster0.zgd8u.mongodb.net/<dbname>?retryWrites=true&w=majority"
@@ -100,6 +103,6 @@ app.post('/delete',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server started")
 })
